@@ -6,7 +6,7 @@ const verbalRank = document.getElementById('verbal-rank');
 const visualRank = document.getElementById('visual-rank');
 const totalRank = document.getElementById('result-number');
 const resultStatus = document.getElementById('result-status');
-
+const resultDescription = document.getElementById('result-description');
 
 
 fetch(jsonURL)
@@ -25,6 +25,7 @@ fetch(jsonURL)
             };
             sum += Math.floor(json.score / 4);
             totalRank.innerHTML = sum;
+            resultDescription.innerHTML = `Your performance exceed of ${sum}% the people conducting the test here!`
             if (sum < 10) {
                 resultStatus.innerHTML = 'Failed';
             } else if (sum > 10 && sum < 70) {
