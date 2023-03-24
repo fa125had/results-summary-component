@@ -34,7 +34,6 @@ main {
 }
 .container .white-background {
   width: 100%;
-  height: 100%;
   background: hsl(0, 0%, 100%);
   box-shadow: 0px 30px 60px rgba(61, 108, 236, 0.15);
   border-radius: 32px;
@@ -51,7 +50,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.3rem;
+  gap: 0.5rem;
 }
 .container .white-background .result .result-title {
   color: #CAC9FF;
@@ -115,7 +114,7 @@ main {
   flex-direction: column;
   align-items: stretch;
   justify-content: center;
-  gap: 1.3rem;
+  padding: 3rem 0;
 }
 .container .white-background .summary-container .summary .summary-title {
   font-size: 24px;
@@ -198,7 +197,7 @@ main {
   border: none;
   font-size: 1rem;
   border-radius: 10rem;
-  margin-top: 1rem;
+  margin-top: 3rem;
   transition: all 500ms ease-in-out;
 }
 .container .white-background .summary-container .summary .summary-button:hover {
@@ -229,16 +228,17 @@ footer a {
 @media only screen and (max-width: 414px) {
   main {
     align-items: flex-start;
-    height: 100vh;
+    max-height: unset;
     min-height: unset;
+    height: 100%;
   }
   .container {
     height: 100%;
+    overflow-y: auto;
   }
   .container .white-background {
     grid-template-rows: 356px 453px;
     border-radius: 0;
-    overflow: auto;
   }
   .container .white-background .result {
     padding-top: 1rem;
