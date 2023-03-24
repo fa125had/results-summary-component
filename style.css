@@ -20,7 +20,7 @@ main {
   position: relative;
   width: 1440px;
   max-width: 100%;
-  height: 1080px;
+  min-height: 1080px;
   max-height: 100%;
   display: flex;
   justify-content: center;
@@ -229,7 +229,8 @@ footer a {
 @media only screen and (max-width: 414px) {
   main {
     align-items: flex-start;
-    height: unset;
+    height: 100vh;
+    min-height: unset;
   }
   .container {
     height: 100%;
