@@ -8,37 +8,41 @@ const totalRank = document.getElementById('result-number');
 const resultStatus = document.getElementById('result-status');
 const resultDescription = document.getElementById('result-description');
 
-
 fetch(jsonURL)
     .then(response => response.json())
     .then(data => {
         let sum = 0;
         data.forEach(json => {
-            if (json.category == 'Reaction') {
-                reactionRank.innerHTML = ` ${json.score}`;
-            } else if (json.category == 'Memory') {
-                memoryRank.innerHTML = ` ${json.score}`;
-            } else if (json.category == 'Verbal') {
-                verbalRank.innerHTML = ` ${json.score}`;
-            } else if (json.category == 'Visual') {
-                visualRank.innerHTML = ` ${json.score}`;
-            };
+            switch (json.category) {
+                case 'Reaction':
+                    reactionRank.innerHTML = `${json.score}`;
+                    break;
+                case 'Memory':
+                    memoryRank.innerHTML = `${json.score}`;
+                    break;
+                case 'Verbal':
+                    verbalRank.innerHTML = `${json.score}`;
+                    break;
+                case 'Visual':
+                    visualRank.innerHTML = `${json.score}`;
+                    break;
+                default:
+                    break;
+            }
             sum += Math.floor(json.score / 4);
-            totalRank.innerHTML = sum;
-            resultDescription.innerHTML = `Your performance exceed of ${sum}% the people conducting the test here!`
-            if (sum < 10) {
-                resultStatus.innerHTML = 'Failed';
-            } else if (sum > 10 && sum < 70) {
-                resultStatus.innerHTML = 'Good';
-            } else if (sum > 69 && sum < 100) {
-                resultStatus.innerHTML = 'Great';
-            }
-            else if (sum === 100) {
-                resultStatus.innerHTML = 'Jackpot!';
-            }
         });
+        totalRank.innerHTML = sum;
+        resultDescription.innerHTML = `Your performance exceeded that of ${sum}% of people who took the test here!`;
+        if (sum < 10) {
+            resultStatus.innerHTML = 'Practice More';
+        } else if (sum < 70) {
+            resultStatus.innerHTML = 'Good';
+        } else if (sum < 100) {
+            resultStatus.innerHTML = 'Great';
+        } else {
+            resultStatus.innerHTML = 'Jackpot!';
+        }
     })
     .catch(error => {
-        console.error('Error:', error);
+        alert('Error:', error);
     });
-

@@ -95,7 +95,7 @@ main {
   font-size: 1rem;
   color: #CAC9FF;
   line-height: 1.45rem;
-  width: 260px;
+  width: 75%;
   font-family: "Hanken Grotesk", sans-serif;
   font-weight: 500;
 }
@@ -196,6 +196,7 @@ main {
   border: none;
   font-size: 1rem;
   border-radius: 10rem;
+  margin-top: 1rem;
   transition: all 500ms ease-in-out;
 }
 .container .white-background .summary-container .summary .summary-button:hover {
@@ -276,5 +277,10 @@ footer a {
     grid-column: 1/3;
     max-width: unset;
     width: 90%;
+  }
+}
+@media only screen and (max-width: 215px) {
+  * {
+    font-size: 10px;
   }
 }/*# sourceMappingURL=style.css.map */
