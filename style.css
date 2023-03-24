@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 18px;
+  font-family: "Hanken Grotesk", sans-serif;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  position: relative;
+  width: 1440px;
+  max-width: 100%;
+  height: 1080px;
+  max-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ECF2FF;
+}
+
+.container {
+  width: 736px;
+  height: 512px;
+}
+.container .white-background {
+  width: 100%;
+  height: 100%;
+  background: hsl(0, 0%, 100%);
+  box-shadow: 0px 30px 60px rgba(61, 108, 236, 0.15);
+  border-radius: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+.container .white-background .result {
+  background: linear-gradient(to top, hsl(241, 81%, 54%), hsl(252, 100%, 67%));
+  border-radius: 32px;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.3rem;
+}
+.container .white-background .result .result-title {
+  color: #CAC9FF;
+  font-size: 24px;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 700;
+}
+.container .white-background .result .result-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(to top, hsla(241, 72%, 46%, 0), hsl(256, 72%, 46%));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: hsl(0, 0%, 100%);
+  transition: all 500ms ease-in-out;
+}
+.container .white-background .result .result-circle #result-number {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 800;
+  font-size: 4rem;
+  line-height: 4rem;
+}
+.container .white-background .result .result-circle .result-max {
+  color: #CAC9FF;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 700;
+  line-height: 1.3rem;
+}
+.container .white-background .result .result-status {
+  color: hsl(0, 0%, 100%);
+  font-size: 32px;
+  line-height: 42px;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 700;
+  text-align: center;
+}
+.container .white-background .result .result-description {
+  text-align: center;
+  font-size: 1rem;
+  color: #CAC9FF;
+  line-height: 1.45rem;
+  max-width: 14.2rem;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 500;
+}
+.container .white-background .summary-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  width: 288px;
+  height: 100%;
+}
+.container .white-background .summary-container .summary {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 1.3rem;
+}
+.container .white-background .summary-container .summary .summary-title {
+  font-size: 24px;
+  color: hsl(224, 30%, 27%);
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 700;
+}
+.container .white-background .summary-container .summary .summary-ranks {
+  list-style: none;
+  font-size: 0.9rem;
+  height: 272px;
+}
+.container .white-background .summary-container .summary .summary-ranks span:nth-child(1) {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  padding-right: 1.5rem;
+}
+.container .white-background .summary-container .summary .summary-ranks span:nth-child(2) {
+  margin-right: auto;
+  font-size: 1rem;
+}
+.container .white-background .summary-container .summary .summary-ranks span:nth-child(3) {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+.container .white-background .summary-container .summary .summary-ranks span:nth-child(3) span:nth-child(1) {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 700;
+  color: #303B59;
+  font-size: 1rem;
+}
+.container .white-background .summary-container .summary .summary-ranks span:nth-child(3) span:nth-child(2) {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 700;
+  color: #303B59;
+  opacity: 0.5;
+  font-size: 1rem;
+}
+.container .white-background .summary-container .summary .summary-ranks .summary-detail {
+  padding: 1rem 0.8rem;
+  border-radius: 0.7rem;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+}
+.container .white-background .summary-container .summary .summary-ranks .summary-detail .reaction-title {
+  color: hsl(0, 100%, 67%);
+}
+.container .white-background .summary-container .summary .summary-ranks .summary-detail .memory-title {
+  color: hsl(39, 100%, 56%);
+}
+.container .white-background .summary-container .summary .summary-ranks .summary-detail .verbal-title {
+  color: hsl(166, 100%, 37%);
+}
+.container .white-background .summary-container .summary .summary-ranks .summary-detail .visual-rank {
+  color: hsl(234, 85%, 45%);
+}
+.container .white-background .summary-container .summary .summary-ranks .reaction {
+  background: hsla(0, 100%, 67%, 0.05);
+}
+.container .white-background .summary-container .summary .summary-ranks .memory {
+  background: hsla(39, 100%, 56%, 0.05);
+}
+.container .white-background .summary-container .summary .summary-ranks .verbal {
+  background: hsla(166, 100%, 37%, 0.05);
+}
+.container .white-background .summary-container .summary .summary-ranks .visual {
+  background: hsla(234, 85%, 45%, 0.05);
+}
+.container .white-background .summary-container .summary .summary-button {
+  background-color: #303B59;
+  color: hsl(0, 0%, 100%);
+  padding: 1rem 0.8rem;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 700;
+  border: none;
+  font-size: 1rem;
+  border-radius: 10rem;
+  margin-top: 1rem;
+  transition: all 500ms ease-in-out;
+}
+.container .white-background .summary-container .summary .summary-button:hover {
+  filter: drop-shadow(0px 30px 60px rgba(61, 108, 236, 0.15));
+  background: linear-gradient(to top, hsl(241, 81%, 54%) 50%, hsl(252, 100%, 67%));
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */

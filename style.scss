@@ -1,0 +1,289 @@
+//Font
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
+
+@mixin font-medium {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 500;
+}
+
+@mixin font-bold {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 700;
+}
+
+@mixin font-extra-bold {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 800;
+}
+
+//Layout
+$mobile-width: 375px;
+$desktop-width: 1440px;
+
+//Colors
+$color-primary-light-red: hsl(0, 100%, 67%);
+$color-primary-orangey-yellow: hsl(39, 100%, 56%);
+$color-primary-green-teal: hsl(166, 100%, 37%);
+$color-primary-cobalt-blue: hsl(234, 85%, 45%);
+$color-gradient-light-slate-blue-background: hsl(252, 100%, 67%);
+$color-gradient-light-royal-blue-background: hsl(241, 81%, 54%);
+$color-gradient-violet-blue-circle: hsla(256, 72%, 46%, 1);
+$color-gradient-persian-blue-circle: hsla(241, 72%, 46%, 0);
+$color-neutral-white: hsl(0, 0%, 100%);
+$color-neutral-pale-blue: hsl(221, 100%, 96%);
+$color-neutral-light-lavender: hsl(241, 100%, 89%);
+$color-neutral-dark-gray-blue: hsl(224, 30%, 27%);
+$color-neutral-very-light-blue-background: #ECF2FF;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 18px;
+    font-family: 'Hanken Grotesk', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    position: relative;
+    width: 1440px;
+    max-width: 100%;
+    height: 1080px;
+    max-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $color-neutral-very-light-blue-background;
+
+}
+
+.container {
+    // width: 51%;
+    width: 736px;
+    height: 512px;
+
+    .white-background {
+        width: 100%;
+        height: 100%;
+        background: $color-neutral-white;
+        box-shadow: 0px 30px 60px rgba(61, 108, 236, 0.15);
+        border-radius: 32px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        overflow: hidden;
+
+        .result {
+            background: linear-gradient(to top,
+                    $color-gradient-light-royal-blue-background,
+                    $color-gradient-light-slate-blue-background );
+            border-radius: 32px;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1.3rem;
+
+            .result-title {
+                color: #CAC9FF;
+                font-size: 24px;
+                @include font-bold();
+            }
+
+            .result-circle {
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                background: linear-gradient(to top,
+                        $color-gradient-persian-blue-circle,
+                        $color-gradient-violet-blue-circle );
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                color: $color-neutral-white;
+                transition: all 500ms ease-in-out;
+
+                #result-number {
+                    @include font-extra-bold();
+                    font-size: 4rem;
+                    line-height: 4rem;
+
+                }
+
+                .result-max {
+                    color: #CAC9FF;
+                    @include font-bold();
+                    line-height: 1.3rem;
+                }
+
+
+            }
+
+            .result-status {
+                color: $color-neutral-white;
+                font-size: 32px;
+                line-height: 42px;
+                @include font-bold();
+                text-align: center;
+
+                // padding-top: 1rem;
+
+            }
+
+            .result-description {
+                text-align: center;
+                font-size: 1rem;
+                color: #CAC9FF;
+                line-height: 1.45rem;
+                max-width: 14.2rem;
+                @include font-medium();
+                // padding-bottom: 2rem;
+            }
+
+        }
+
+        .summary-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            justify-self: center;
+            width: 288px;
+            height: 100%;
+
+            .summary {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                justify-content: center;
+                gap: 1.3rem;
+
+                .summary-title {
+                    font-size: 24px;
+                    color: $color-neutral-dark-gray-blue;
+                    @include font-bold();
+
+                }
+
+                .summary-ranks {
+                    list-style: none;
+                    font-size: 0.9rem;
+                    height: 272px;
+
+                    span:nth-child(1) {
+                        width: 20px;
+                        height: 20px;
+                        vertical-align: middle;
+                        padding-right: 1.5rem;
+                    }
+
+                    span:nth-child(2) {
+                        margin-right: auto;
+                        font-size: 1rem;
+                    }
+
+                    span:nth-child(3) {
+                        display: flex;
+                        justify-content: center;
+                        align-items: baseline;
+
+                        span:nth-child(1) {
+                            @include font-bold();
+                            color: #303B59;
+                            font-size: 1rem;
+
+                        }
+
+                        span:nth-child(2) {
+                            @include font-bold();
+                            color: #303B59;
+                            opacity: .5;
+                            font-size: 1rem;
+
+                        }
+                    }
+
+                    .summary-detail {
+                        padding: 1rem .8rem;
+                        border-radius: .7rem;
+                        margin: 1rem 0;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        max-width: 100%;
+
+                        .reaction-title {
+                            color: $color-primary-light-red;
+                        }
+
+                        .memory-title {
+                            color: $color-primary-orangey-yellow;
+                        }
+
+                        .verbal-title {
+                            color: $color-primary-green-teal;
+                        }
+
+                        .visual-rank {
+                            color: $color-primary-cobalt-blue;
+                        }
+                    }
+
+                    .reaction {
+                        background: hsla(0, 100%, 67%, .05);
+                    }
+
+
+                    .memory {
+                        background: hsla(39, 100%, 56%, .05);
+                    }
+
+
+                    .verbal {
+                        background: hsla(166, 100%, 37%, .05);
+
+                    }
+
+
+                    .visual {
+                        background: hsla(234, 85%, 45%, .05);
+                    }
+
+                }
+
+
+                .summary-button {
+                    background-color: #303B59;
+                    color: $color-neutral-white;
+                    padding: 1rem .8rem;
+                    @include font-bold();
+                    border: none;
+                    font-size: 1rem;
+                    border-radius: 10rem;
+                    margin-top: 1rem;
+                    transition: all 500ms ease-in-out;
+
+                    &:hover {
+                        filter: drop-shadow(0px 30px 60px rgba(61, 108, 236, 0.15));
+                        background: linear-gradient(to top,
+                                $color-gradient-light-royal-blue-background 50%,
+                                $color-gradient-light-slate-blue-background );
+                        cursor: pointer;
+                    }
+                }
+            }
+
+        }
+    }
+
+}
